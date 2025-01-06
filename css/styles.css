@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: radial-gradient(circle, #f1edda, #E8E8E8);
+    color: #333333;
+    display: flex;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000000; /* Black background for sidebar */
+    color: #ffffff; /* White text color */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 200px; /* Larger picture */
+    height: 200px;
+    margin: 0 auto 2.5rem auto; /* Center the image and increase spacing below */
+    border-radius: 50%; /* Make the image circular */
+    overflow: hidden; /* Keep the image within the circle */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for effect */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    display: block;
+}
+
+.sidebar .profile h1 {
+    margin-top: 1rem; /* Add space above the name */
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #ffffff; /* White text */
+}
+
+.sidebar .profile h2 {
+    margin-top: 1.5rem; /* Add more spacing above the position */
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #dddddd; /* Slightly dimmer white */
+}
+
+.sidebar .profile p {
+    margin-top: 1.5rem; /* Add more spacing above the description */
+    font-size: 1rem;
+    color: #cccccc; /* Dimmed white for less emphasis */
+}
+
+.nav ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.nav ul li {
+    margin-bottom: 1rem;
+}
+
+.nav ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav ul li a .dash {
+    width: 10px;
+    height: 2px;
+    background-color: #ffffff; /* White dash */
+    margin-right: 0.5rem;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.nav ul li a.active {
+    color: #ffffff; /* Keep active link white */
+}
+
+.nav ul li a.active .dash {
+    width: 20px;
+    background-color: #ffffff; /* Keep active dash white */
+}
+
+.social {
+    display: flex;
+    justify-content: space-around; /* Space between icons */
+    margin-top: 1rem;
+}
+
+.social a {
+    font-size: 1.5rem; /* Larger icons */
+    color: #ffffff; /* White icons */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social a:hover {
+    color: #bbbbbb; /* Slightly dimmed white on hover */
+    transform: scale(1.2); /* Subtle hover effect */
+}
+
+.social a.phone {
+    position: relative;
+}
+
+.social a.phone:hover::after {
+    content: '+1 (647) 545-3321'; /* Your phone number */
+    position: absolute;
+    top: -25px; /* Position above the icon */
+    left: 50%; /* Center align */
+    transform: translateX(-50%);
+    background-color: #333; /* Tooltip background */
+    color: #fff; /* Tooltip text color */
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+}
+
+/* Content Area */
+.content {
+    margin-left: 25%;
+    padding: 3rem;
+    width: 75%;
+}
+
+h2 {
+    font-size: 2rem; /* Larger section headers */
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section {
+    margin-bottom: 6rem;
+}
+
+.job, .project {
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem; /* Job/project titles */
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-size: 1.2rem; /* Subheading for company/organization */
+    font-weight: 500;
+    color: #777777;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem; /* Standard paragraph size */
+    color: #555555;
+    margin-bottom: 1rem;
+}
+
+/* Button */
+.button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    color: #FFF8DC;
+    background-color: #333333;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #555555;
+    transform: translateY(-3px);
+}
+
+/* Archive Page */
+.archive {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    border-left: 4px solid #333333;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.project:hover {
+    background: rgba(255, 248, 220, 0.8); /* Slightly brighter yellow on hover */
+    border-color: #000000; /* Darker border on hover */
+}
+
+.project h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project a:hover {
+    color: #000000;
+}
+
